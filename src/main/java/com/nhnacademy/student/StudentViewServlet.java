@@ -31,9 +31,9 @@ public class StudentViewServlet extends HttpServlet {
         Student student = studentRepository.getStudentById(id);
         req.setAttribute("student",student);
 
-        //todo /student/view.jsp <-- forward
-        RequestDispatcher rd = req.getRequestDispatcher("/student/view.jsp");
-        rd.forward(req,resp);
-
+//        //todo /student/view.jsp <-- forward
+//        RequestDispatcher rd = req.getRequestDispatcher("/student/view.jsp");
+//        rd.forward(req,resp);
+        req.setAttribute("view", "/student/view.jsp");
     }
 }
