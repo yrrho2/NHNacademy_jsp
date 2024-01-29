@@ -4,7 +4,9 @@ public enum Gender {
     M("male"),
     F("female");
 
-    private String label;
+    private final String label;
     Gender(String label) {
+        this.label=label;
     }
+    public String getLabel(){return this.label;}
 }

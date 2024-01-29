@@ -14,8 +14,8 @@ public class MapStudentRepository implements StudentRepository{
 
     @Override
     public void update(Student student) {
-        studentsMap.replace(student.getId(),student);
-
+        this.deleteById(student.getId());
+        this.save(student);
     }
 
     @Override

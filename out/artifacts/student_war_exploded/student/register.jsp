@@ -17,8 +17,13 @@
         action = /student/update
 -->
 <%
-    String action = "/student/register";
+    String action;
     Student student = (Student) request.getAttribute("student");
+    if(student == null){
+        action= "/student/register";
+    }else {
+        action = "/student/update";
+    }
 
     request.setAttribute("student", student);
     request.setAttribute("action", action);

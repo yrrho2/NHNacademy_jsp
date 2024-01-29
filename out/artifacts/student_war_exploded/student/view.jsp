@@ -4,8 +4,8 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib prefix="cfmt" uri="http://nhnacademy.com/cfmt" %>
 <%
-    Student student = (Student) request.getAttribute("student");
-
+    String update_link = "/student/update";
+    request.setAttribute("update_link", update_link);
 %>
 <html>
 <head>
@@ -14,7 +14,7 @@
 </head>
 <body>
 <p>hello viewer!!</p>
-<table style="*{border:solid black}">
+<table style="border:solid black">
     <tbody >
     <!-- todo view 구현 -->
     <tr>
@@ -45,7 +45,10 @@
     <li><a href="/student/list">리스트</a></li>
     <li>
         <!-- todo ${update_link} 설정 c:url -->
-<%--        <a href="${update_link}">수정</a>--%>
+        <c:url var="updateData" value="${update_link}">
+            <c:param name="id" value= "${student.getId()}"/>
+        </c:url>
+        <a href="${updateData}">수정</a>
     </li>
     <li>
 <%--        todo 삭제버튼 구현, method=post--%>
