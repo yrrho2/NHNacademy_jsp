@@ -32,10 +32,10 @@ public class StudentRegisterServlet extends HttpServlet {
 
         //todo null check
         Student student= new Student();
-        String id = (String) req.getAttribute("id");
-        String name = (String)  req.getAttribute("name");
-        Gender gender = (Gender) req.getAttribute("gender");
-        Object age = req.getAttribute("age");
+        String id = req.getParameter("id");
+        String name = req.getParameter("name");
+        String gender = req.getParameter("gender");
+        String age = req.getParameter("age");
 
         if(id == null)throw new NullPointerException();
         if(name == null)throw new NullPointerException();
@@ -46,13 +46,14 @@ public class StudentRegisterServlet extends HttpServlet {
         //todo save 구현
         student.setId(id);
         student.setName(name);
-        student.setGender(gender);
-        student.setAge((int)age);
+        student.setGender((gender.equals(Gender.M.name())?Gender.M:Gender.F));
+
+        student.setAge(Integer.parseInt(age));
         studentRepository.save(student);
 
         //todo redirect /student/view?id=student1
-        RequestDispatcher rd = req.getRequestDispatcher("/student/view?id=student1");
-        rd.forward(req,resp);
+        resp.sendRedirect("/student/view?id="+id);
+
     }
 
 }

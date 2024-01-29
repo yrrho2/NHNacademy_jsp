@@ -14,7 +14,7 @@
 </head>
 <body>
 <p>hello viewer!!</p>
-<table style="border: solid black;">
+<table>
     <tbody>
     <!-- todo view 구현 -->
     <tr>
@@ -32,10 +32,6 @@
     <tr>
         <th>나이</th>
         <td>${student.getAge()}</td>
-    </tr>
-    <tr>
-        <th>등록일</th>
-        <td></td>
     </tr>
     </tbody>
 </table>

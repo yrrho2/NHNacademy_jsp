@@ -1,5 +1,10 @@
 package com.nhnacademy.student;
 
 public enum Gender {
-    M,F
+    M("male"),
+    F("female");
+
+    private String label;
+    Gender(String label) {
+    }
 }
