@@ -30,9 +30,10 @@ public class StudentListServlet extends HttpServlet {
 
         req.setAttribute("studentList",studentList);
 
-        RequestDispatcher rd = req.getRequestDispatcher("/student/list.jsp");
-        rd.forward(req,resp);
+//        RequestDispatcher rd = req.getRequestDispatcher("/student/list.jsp");
+//        rd.forward(req,resp);
         // /student/list.jsp <- forward 하기
+        req.setAttribute("view", "/student/list.jsp");
     }
 
 }
