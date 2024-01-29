@@ -2,7 +2,7 @@
 <%@ page import="com.nhnacademy.student.Student" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" trimDirectiveWhitespaces="true" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%--<%@ taglib prefix="cfmt" uri="http://nhnacademy.com/cfmt" %>--%>
+<%@ taglib prefix="cfmt" uri="http://nhnacademy.com/cfmt" %>
 <%
     Student student = (Student) request.getAttribute("student");
 
@@ -14,8 +14,8 @@
 </head>
 <body>
 <p>hello viewer!!</p>
-<table style="border: solid black;">
-    <tbody>
+<table style="border:solid black">
+    <tbody >
     <!-- todo view 구현 -->
     <tr>
         <th>아이디</th>
@@ -35,7 +35,9 @@
     </tr>
     <tr>
         <th>등록일</th>
-        <td></td>
+        <td>
+            ${cfmt:formatDate(student.getCreatedAt(), 'yyyy-MM-dd HH:mm:ss')}
+        </td>
     </tr>
     </tbody>
 </table>

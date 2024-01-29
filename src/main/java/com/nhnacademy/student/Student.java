@@ -1,10 +1,11 @@
 package com.nhnacademy.student;
 
-import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
 import java.time.LocalDateTime;
+
+import static java.time.LocalDateTime.now;
 
 @Getter
 @Setter
@@ -20,5 +21,8 @@ public class Student {
     //생성일
     private LocalDateTime createdAt;
 
+    public Student(){
+        createdAt = LocalDateTime.now();
+    }
 
 }
