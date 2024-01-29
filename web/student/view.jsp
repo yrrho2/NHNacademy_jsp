@@ -52,6 +52,11 @@
     </li>
     <li>
 <%--        todo 삭제버튼 구현, method=post--%>
+        <form method="post" action="/student/delete">
+            <input type="hidden" name="id" value="${student.getId()}">
+            <a type="submit "></a>
+            <input type="submit" value="삭제">
+        </form>
      </li>
 
  </ul>
