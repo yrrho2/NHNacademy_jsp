@@ -1,5 +1,7 @@
-package com.nhnacademy.student;
+package com.nhnacademy.student.Servlet;
 
+import com.nhnacademy.student.Student;
+import com.nhnacademy.student.StudentRepository;
 import lombok.extern.slf4j.Slf4j;
 
 import javax.servlet.RequestDispatcher;

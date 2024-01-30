@@ -1,4 +1,6 @@
-package com.nhnacademy.student;
+package com.nhnacademy.student.Servlet;
+
+import com.nhnacademy.student.StudentRepository;
 
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;

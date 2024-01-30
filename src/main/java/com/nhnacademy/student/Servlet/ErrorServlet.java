@@ -1,4 +1,4 @@
-package com.nhnacademy.student;
+package com.nhnacademy.student.Servlet;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;

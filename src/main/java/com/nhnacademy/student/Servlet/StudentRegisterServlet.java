@@ -1,4 +1,8 @@
-package com.nhnacademy.student;
+package com.nhnacademy.student.Servlet;
+
+import com.nhnacademy.student.Gender;
+import com.nhnacademy.student.Student;
+import com.nhnacademy.student.StudentRepository;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletConfig;
