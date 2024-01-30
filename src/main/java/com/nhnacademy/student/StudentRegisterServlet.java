@@ -53,7 +53,7 @@ public class StudentRegisterServlet extends HttpServlet {
 
         //todo redirect /student/view?id=student1
 //        resp.sendRedirect("/student/view?id="+id);
-        req.setAttribute("view", "/student/view?id="+id);
+        req.setAttribute("view", "redirect:/student/view.do?id="+id);
     }
 
 }

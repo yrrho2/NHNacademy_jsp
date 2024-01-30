@@ -58,6 +58,6 @@ public class StudentUpdateServlet extends HttpServlet {
 
         //todo /student/view?id=student1 <-- redirect
 //        resp.sendRedirect("/student/view?id="+id);
-        req.setAttribute("view", "/student/view?id="+id);
+        req.setAttribute("view", "redirect:/student/view?id="+id);
     }
 }
