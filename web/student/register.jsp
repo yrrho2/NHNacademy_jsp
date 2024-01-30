@@ -20,9 +20,9 @@
     String action;
     Student student = (Student) request.getAttribute("student");
     if(student == null){
-        action= "/student/register";
+        action= "/student/register.do";
     }else {
-        action = "/student/update";
+        action = "/student/update.do";
     }
 
     request.setAttribute("student", student);

@@ -25,7 +25,7 @@
 
 <body>
 <h1>학생 리스트</h1>
-<p><a href="/student/register" >학생(등록)</a></p>
+<p><a href="/student/register.do" >학생(등록)</a></p>
 <table>
     <thead>
     <tr>
