@@ -39,7 +39,7 @@ public class FrontServlet extends HttpServlet {
 
             } else {
                 //todo redirect 아니면 JSP에게 view 처리를 위임하여 그 결과를 include 처리.
-                RequestDispatcher rd =req.getRequestDispatcher(view.substring(REDIRECT_PREFIX.length()+1));
+                RequestDispatcher rd =req.getRequestDispatcher(view);
                 rd.include(req,resp);
 
             }
@@ -56,44 +56,6 @@ public class FrontServlet extends HttpServlet {
         }
 
     }
-
-//    @Override
-//    protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-//
-//        //todo 공통 처리 - 응답 content-type, character encoding 지정.
-//        resp.setContentType("text/html;charset=utf-8");
-//        resp.setCharacterEncoding("UTF-8");
-//
-//        try{
-//            //실제 요청 처리할 servlet을 결정
-//            String servletPath = resolveServlet(req.getServletPath());
-//            RequestDispatcher rd = req.getRequestDispatcher(servletPath);
-//            rd.include(req, resp);
-//
-//            //실제 요청을 처리한 servlet이 'view'라는 request 속성값으로 view를 전달해 줌.
-//            String view = (String) req.getAttribute("view");
-//            if (view.startsWith(REDIRECT_PREFIX)) {
-//                //log.error("redirect-url : {}", view.substring(REDIRECT_PREFIX.length()+1));
-//                // todo  `redirect:`로 시작하면 redirect 처리.
-//                resp.sendRedirect(view.substring(REDIRECT_PREFIX.length()+1));
-//            } else {
-//                // todo redirect 아니면 JSP에게 view 처리를 위임하여 그 결과를 include시킴.
-//                rd =req.getRequestDispatcher(view.substring(REDIRECT_PREFIX.length()+1));
-//                rd.include(req,resp);
-//            }
-//        }catch(Exception ex){
-//            //todo 공통 error 처리 - ErrorServlet 참고해서 처리
-//            req.setAttribute("status_code", req.getAttribute(ERROR_STATUS_CODE));
-//            req.setAttribute("exception_type", req.getAttribute(ERROR_EXCEPTION_TYPE));
-//            req.setAttribute("message", req.getAttribute(ERROR_MESSAGE));
-//            req.setAttribute("exception", req.getAttribute(ERROR_EXCEPTION));
-//            req.setAttribute("request_uri", req.getAttribute(ERROR_REQUEST_URI));
-//
-//            //todo  forward - /error.jsp
-//            RequestDispatcher rd = req.getRequestDispatcher("/student/error.jsp");
-//            rd.forward(req,resp);
-//        }
-//    }
 
     private String resolveServlet(String servletPath){
         String processingServlet = null;
@@ -135,3 +97,41 @@ public class FrontServlet extends HttpServlet {
         return command;
     }
 }
+
+//    @Override
+//    protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+//
+//        //todo 공통 처리 - 응답 content-type, character encoding 지정.
+//        resp.setContentType("text/html;charset=utf-8");
+//        resp.setCharacterEncoding("UTF-8");
+//
+//        try{
+//            //실제 요청 처리할 servlet을 결정
+//            String servletPath = resolveServlet(req.getServletPath());
+//            RequestDispatcher rd = req.getRequestDispatcher(servletPath);
+//            rd.include(req, resp);
+//
+//            //실제 요청을 처리한 servlet이 'view'라는 request 속성값으로 view를 전달해 줌.
+//            String view = (String) req.getAttribute("view");
+//            if (view.startsWith(REDIRECT_PREFIX)) {
+//                //log.error("redirect-url : {}", view.substring(REDIRECT_PREFIX.length()+1));
+//                // todo  `redirect:`로 시작하면 redirect 처리.
+//                resp.sendRedirect(view.substring(REDIRECT_PREFIX.length()+1));
+//            } else {
+//                // todo redirect 아니면 JSP에게 view 처리를 위임하여 그 결과를 include시킴.
+//                rd =req.getRequestDispatcher(view.substring(REDIRECT_PREFIX.length()+1));
+//                rd.include(req,resp);
+//            }
+//        }catch(Exception ex){
+//            //todo 공통 error 처리 - ErrorServlet 참고해서 처리
+//            req.setAttribute("status_code", req.getAttribute(ERROR_STATUS_CODE));
+//            req.setAttribute("exception_type", req.getAttribute(ERROR_EXCEPTION_TYPE));
+//            req.setAttribute("message", req.getAttribute(ERROR_MESSAGE));
+//            req.setAttribute("exception", req.getAttribute(ERROR_EXCEPTION));
+//            req.setAttribute("request_uri", req.getAttribute(ERROR_REQUEST_URI));
+//
+//            //todo  forward - /error.jsp
+//            RequestDispatcher rd = req.getRequestDispatcher("/student/error.jsp");
+//            rd.forward(req,resp);
+//        }
+//    }

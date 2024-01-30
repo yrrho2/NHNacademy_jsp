@@ -29,8 +29,6 @@ public class StudentRegisterController implements Command{
         student.setGender((gender.equals(Gender.M.getLabel())?Gender.M:Gender.F));
         student.setAge(Integer.parseInt(age));
         studentRepository.save(student);
-
-
         return ("redirect:/student/view.do?id="+id);
     }
 }

@@ -14,6 +14,6 @@ public class ErrorController implements Command{
         request.setAttribute("exception", request.getAttribute(ERROR_EXCEPTION));
         request.setAttribute("request_uri", request.getAttribute(ERROR_REQUEST_URI));
 
-        return "redirect:/student/error.do";
+        return "redirect:/error.do";
     }
 }

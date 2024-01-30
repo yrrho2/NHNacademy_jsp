@@ -28,6 +28,7 @@ public class StudentUpdateController implements Command{
         student.setGender((gender.equals(Gender.M.getLabel())?Gender.M:Gender.F));
         student.setAge(Integer.parseInt(age));
         studentRepository.update(student);
-        return ("redirect:/student/view?id="+id);
+
+        return ("redirect:/student/view.do?id="+id);
     }
 }

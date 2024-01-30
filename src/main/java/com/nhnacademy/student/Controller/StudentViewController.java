@@ -13,6 +13,6 @@ public class StudentViewController implements Command{
         String id = request.getParameter("id");
         Student student = studentRepository.getStudentById(id);
         request.setAttribute("student", student);
-        return "/student/view.do";
+        return "/student/view.jsp";
     }
 }

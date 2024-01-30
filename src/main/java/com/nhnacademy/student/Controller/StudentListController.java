@@ -14,6 +14,6 @@ public class StudentListController implements Command{
         StudentRepository studentRepository = (StudentRepository) request.getServletContext().getAttribute("studentRepository");
         List<Student> studentList = studentRepository.getStudents();
         request.setAttribute("studentList", studentList);
-        return "/student/list.do";
+        return "/student/list.jsp";
     }
 }

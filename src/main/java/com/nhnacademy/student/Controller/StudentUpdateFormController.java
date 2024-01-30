@@ -10,8 +10,8 @@ public class StudentUpdateFormController implements Command{
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) {
         StudentRepository studentRepository = (StudentRepository) request.getServletContext().getAttribute("studentRepository");
-        Student student = studentRepository.getStudentById((String) request.getAttribute("id"));
+        Student student = studentRepository.getStudentById((String) request.getParameter("id"));
         request.setAttribute("student",student);
-        return "/student/register.do";
+        return "/student/register.jsp";
     }
 }
