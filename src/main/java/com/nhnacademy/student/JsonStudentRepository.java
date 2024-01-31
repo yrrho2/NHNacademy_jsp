@@ -76,26 +76,45 @@ public class JsonStudentRepository implements StudentRepository {
 
     @Override
     public void update(Student student) {
-
+        List<Student> students = readJsonFile();
+        for(Student studentIndex : students){
+            if(student.getId().equals(studentIndex.getId())){
+                studentIndex.setId(student.getId());
+                studentIndex.setName(student.getName());
+                studentIndex.setAge(student.getAge());
+                studentIndex.setGender(student.getGender());
+            }
+        }
+        writeJsonFile(students);
     }
-
     @Override
     public void deleteById(String id) {
-
+        List<Student> students = readJsonFile();
+        for(Student student : students){
+            if(student.getId().equals(id))students.remove(student);
+        }
+        writeJsonFile(students);
     }
 
     @Override
     public Student getStudentById(String id) {
+        List<Student> students = readJsonFile();
+        for(Student student : students){
+            if(student.getId().equals(id))return student;
+        }
         return null;
     }
 
     @Override
     public List<Student> getStudents() {
-        return null;
+        return readJsonFile();
     }
 
     @Override
-    public boolean existById(String id) {
+    public boolean existById(String id) {List<Student> students = readJsonFile();
+        for(Student student : students){
+            if(student.getId().equals(id))return true;
+        }
         return false;
     }
 }
